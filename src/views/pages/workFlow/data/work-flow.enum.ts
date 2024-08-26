@@ -34,25 +34,25 @@ export const Nodes_List: NodeItemProps[] = [
         id: '1-1',
         name: 'flow.llm',
         type: NodeType.AI_SET_NODE,
-        src: '../../../src/assets/img/flow/aiSet.png'
+        src: '/genealogy-flow/src/assets/img/flow/aiSet.png'
       },
       {
         id: '1-2',
         name: 'flow.intent',
         type: NodeType.INTENT_NODE,
-        src: '../../../src/assets/img/flow/intent.png'
+        src: '/genealogy-flow/src/assets/img/flow/intent.png'
       },
       {
         id: '1-3',
         name: 'flow.plugins',
         type: NodeType.PLUGIN_NODE,
-        src: '../../../src/assets/img/flow/plugins.png'
+        src: '/genealogy-flow/src/assets/img/flow/plugins.png'
       },
       {
         id: '1-4',
         name: 'flow.codeEditor',
         type: NodeType.CODE_NODE,
-        src: '../../../src/assets/img/flow/codeIcon.svg'
+        src: '/genealogy-flow/src/assets/img/flow/codeIcon.svg'
       }
     ]
   },
@@ -64,7 +64,7 @@ export const Nodes_List: NodeItemProps[] = [
         id: '2-1',
         name: 'flow.condition-judge',
         type: NodeType.CONDITION_NODE,
-        src: '../../../src/assets/img/flow/condition.png'
+        src: '/genealogy-flow/src/assets/img/flow/condition.png'
       }
     ]
   },
@@ -76,7 +76,7 @@ export const Nodes_List: NodeItemProps[] = [
         id: '3-1',
         name: 'flow.variable-assign',
         type: NodeType.SET_NODE,
-        src: '../../../src/assets/img/flow/set.png'
+        src: '/genealogy-flow/src/assets/img/flow/set.png'
       }
     ]
   },
@@ -88,19 +88,19 @@ export const Nodes_List: NodeItemProps[] = [
         id: '4-1',
         name: 'flow.answer-text',
         type: NodeType.TEXT_NODE,
-        src: '../../../src/assets/img/flow/text.png'
+        src: '/genealogy-flow/src/assets/img/flow/text.png'
       },
       {
         id: '4-2',
         name: 'flow.answer-session',
         type: NodeType.CAPTURE_NODE,
-        src: '../../../src/assets/img/flow/capture.png'
+        src: '/genealogy-flow/src/assets/img/flow/capture.png'
       },
       {
         id: '4-3',
         name: 'flow.answer-llm',
         type: NodeType.GENERATIVE_NODE,
-        src: '../../../src/assets/img/flow/generative.png'
+        src: '/genealogy-flow/src/assets/img/flow/generative.png'
       }
     ]
   }
@@ -123,13 +123,6 @@ export const Graph_Data = {
     }
   ]
 }
-
-export const Menu_List = [
-  {
-    label: '选区',
-    icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAABGdBTUEAALGPC/xhBQAAAOVJREFUOBGtVMENwzAIjKP++2026ETdpv10iy7WFbqFyyW6GBywLCv5gI+Dw2Bluj1znuSjhb99Gkn6QILDY2imo60p8nsnc9bEo3+QJ+AKHfMdZHnl78wyTnyHZD53Zzx73MRSgYvnqgCUHj6gwdck7Zsp1VOrz0Uz8NbKunzAW+Gu4fYW28bUYutYlzSa7B84Fh7d1kjLwhcSdYAYrdkMQVpsBr5XgDGuXwQfQr0y9zwLda+DUYXLaGKdd2ZTtvbolaO87pdo24hP7ov16N0zArH1ur3iwJpXxm+v7oAJNR4JEP8DoAuSFEkYH7cAAAAASUVORK5CYII='
-  }
-]
 
 export const Condition_Sel = [
   {

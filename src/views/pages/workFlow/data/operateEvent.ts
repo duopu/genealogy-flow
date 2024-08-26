@@ -80,7 +80,7 @@ export const bindEvent = (eventCenter: EventEmitter, callbacks: any) => {
     // this.nodeDetail = data;
     // this.showDrawer(data);
     openDetail(data)
-    // callbacks?.afterAdd(data)
+    callbacks?.afterAdd(data)
   })
 
   // 防止重叠 有问题直接注释掉

@@ -9,7 +9,12 @@ import express from 'express'
 import cors from 'cors'
 import fs from 'fs'
 import bodyParser from 'body-parser'
+// import path from 'path'
 import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url) // get the resolved path to the file
+const __dirname = path.dirname(__filename) // get the name of the directory
 
 const app = express()
 
@@ -41,7 +46,9 @@ app.post('/api/save_json', async (req, res) => {
 // 从文件加载代码
 app.post('/api/query_json', (req, res) => {
   const { apiName, apiData } = req.body
-  fs.readFile(`../data/${apiName}.json`, 'utf8', (err, data) => {
+  const _path = path.join(__dirname, `../data/${apiName}.json`)
+
+  fs.readFile(_path, 'utf8', (err, data) => {
     if (err) {
       console.error('Error loading code:', err)
       return res.json({ code: 500, message: 'Error loading code' + JSON.stringify(err) })

@@ -43,6 +43,12 @@ const rules: Record<string, Rule[]> = {
   <div class="set-node">
     <!--    <content-editable-input></content-editable-input>-->
     <a-form :model="form" :rules="rules" layout="vertical">
+      <collapse-title :show-arrow="false" title="姓名：">
+        <a-form-item name="name">
+          <a-input v-model:value="form.name" style="width: 100%" placeholder="请输入姓名" />
+        </a-form-item>
+      </collapse-title>
+
       <a-form-item name="label">
         <a-textarea v-model:value="form.label" :rows="4" placeholder="请输入文本内容" />
       </a-form-item>

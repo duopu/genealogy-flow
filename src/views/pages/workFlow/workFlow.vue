@@ -28,17 +28,18 @@ onMounted(() => {
   <div class="work-flow-manage">
     <div class="le">
       <div class="flow-drag-content point">
-        <div class="content-node" v-for="item in nodesList">
+        <div class="content-node" v-for="item in nodesList" :key="item.id">
           <div class="title">
             {{ $t(item.name) }}
           </div>
-          <div v-for="ele in item.children" class="item" @mousedown="addNode(ele)">
-            <img :src="ele.src" alt="" class="menu-pic" />
+          <div v-for="ele in item.children" class="item" @mousedown="addNode(ele)" :key="ele.id">
+            <img :src="`${ele.src}`" alt="" class="menu-pic" />
             <span>{{ $t(ele.name) }}</span>
           </div>
         </div>
       </div>
     </div>
+
     <div id="container" class="container"></div>
   </div>
   <!--  {{ $t('message.hello') }}-->

@@ -22,14 +22,16 @@
       </div>
     </template>
     <div class="draw-body">
-      <n-ai-set :data="data" />
+      <!-- <n-ai-set :data="data" /> -->
+      <LlmNode :data="data" />
     </div>
   </a-drawer>
 </template>
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { CloseOutlined } from '@ant-design/icons-vue'
-import NAiSet from '@/views/pages/workFlow/component/nAiSet.vue'
+// import NAiSet from '@/views/pages/workFlow/component/nAiSet.vue'
+import LlmNode from '@/views/pages/workFlow/component/llm.vue'
 
 defineOptions({
   name: 'NodeDetail'
@@ -42,7 +44,7 @@ interface IProps {
 
 withDefaults(defineProps<IProps>(), {
   config: {
-    width: 400,
+    width: 500,
     mask: true,
     closable: false
   },
@@ -71,4 +73,18 @@ defineExpose({ open, close })
 </script>
 <style lang="less">
 @import './nodeDetail.less';
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+  background-color: #f0f2f5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #bfc3c6;
+}
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #f0f2f5;
+}
 </style>
