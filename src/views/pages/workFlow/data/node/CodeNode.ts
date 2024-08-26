@@ -3,7 +3,7 @@ import { edgesValidate, nodeValidate } from '@/views/pages/workFlow/data/flow-ru
 import { NodeType } from '@/views/pages/workFlow/type/type'
 
 class CodeNode extends HtmlNode {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
   }
 
@@ -43,13 +43,13 @@ class CodeNode extends HtmlNode {
 
 class CodeTextModel extends HtmlNodeModel {
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
   }
 
-  changeField(data) {
+  changeField(data: any) {
     this.setAttributes()
   }
 
@@ -69,7 +69,7 @@ class CodeTextModel extends HtmlNodeModel {
     this.text.editable = false
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {

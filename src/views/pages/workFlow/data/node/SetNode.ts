@@ -3,27 +3,25 @@ import { edgesValidate, nodeValidate } from '@/views/pages/workFlow/data/flow-ru
 import { NodeType } from '@/views/pages/workFlow/type/type'
 
 class SetNode extends HtmlNode {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
   }
 
-  setHtml(rootEl) {
-    const _window = window as any
+  setHtml(rootEl: any) {
     const { properties, id } = this.props.model
     const { src, place, body, oldHeight } = properties
-    // console.log(this.props.model, '');
+
     const el = document.createElement('div')
 
-    const classNames = properties.active
+    el.className = properties.active
       ? `set-node-wrapper flow-node ${id} active`
       : `set-node-wrapper flow-node ${id}`
-    el.className = classNames
 
     let html = `
       <div class="set-body node-body llm-body" #textNode>
-        <img src="${src}" class="node-child-pic" />
+        <img src="${src}" class="node-child-pic"  alt=""/>
     `
-    if (body && body !== '') {
+    if (body !== '') {
       html += `
           <span class="llm-label-text">${body}</span>
         </div>
@@ -64,13 +62,13 @@ class SetNode extends HtmlNode {
 
 class SetModel extends HtmlNodeModel {
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
   }
 
-  changeField(data) {
+  changeField(data: any) {
     this.setAttributes()
   }
 
@@ -92,7 +90,7 @@ class SetModel extends HtmlNodeModel {
     this.text.editable = false
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {

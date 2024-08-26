@@ -2,11 +2,11 @@ import { HtmlNode, HtmlNodeModel } from '@logicflow/core'
 import { NodeType } from '@/views/pages/workFlow/type/type'
 
 class PluginNode extends HtmlNode {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
   }
 
-  setHtml(rootEl) {
+  setHtml(rootEl: any) {
     const { properties, id } = this.props.model
     const {
       src,
@@ -54,13 +54,13 @@ class PluginNode extends HtmlNode {
 
 class PluginModel extends HtmlNodeModel {
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
   }
 
-  changeField(data) {
+  changeField(data: any) {
     this.setAttributes()
   }
 
@@ -79,7 +79,7 @@ class PluginModel extends HtmlNodeModel {
     this.text.editable = false
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {

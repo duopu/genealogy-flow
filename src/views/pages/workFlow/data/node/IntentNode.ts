@@ -3,7 +3,7 @@ import { edgesValidate, nodeValidate } from '@/views/pages/workFlow/data/flow-ru
 import { NodeType } from '@/views/pages/workFlow/type/type'
 
 class IntentNode extends HtmlNode {
-  setHtml(rootEl) {
+  setHtml(rootEl: any) {
     rootEl.innerHTML = ''
     const {
       properties: { intention, name, src, active, place },
@@ -46,7 +46,7 @@ class IntentNode extends HtmlNode {
 
 class IntentModel extends HtmlNodeModel {
   // 自定义添加字段方法
-  changeField(data) {
+  changeField(data: any) {
     const { type } = data?.data || data
 
     if (type !== 'add') {
@@ -66,13 +66,13 @@ class IntentModel extends HtmlNodeModel {
   }
 
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {
@@ -102,12 +102,10 @@ class IntentModel extends HtmlNodeModel {
       y,
       width,
       height,
-      isHovered,
-      isSelected,
       properties: { intention }
     } = this
-    const anchors = []
-    intention.forEach((item, index) => {
+    const anchors: any = []
+    intention.forEach((item: any, index: any) => {
       if (index === 0) {
         anchors.push({
           x: x - width / 2 + 12,

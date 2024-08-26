@@ -107,7 +107,7 @@ const rules: Record<string, Rule[]> = {
             <a-date-picker
               v-model:value="form.dateTime"
               style="width: 100%"
-              :get-popup-container="(trigger) => trigger.parentElement"
+              :get-popup-container="(trigger: any) => trigger.parentElement"
             />
           </a-form-item>
         </a-col>

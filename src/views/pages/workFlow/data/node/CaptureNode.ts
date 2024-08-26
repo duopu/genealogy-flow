@@ -7,7 +7,7 @@ class CaptureNode extends HtmlNode {
     super(props)
   }
 
-  setHtml(rootEl) {
+  setHtml(rootEl: any) {
     const _window = window as any
     const { properties, id } = this.props.model
     const { src, place, name, oldHeight } = properties
@@ -58,7 +58,7 @@ class CaptureModel extends HtmlNodeModel {
     return style
   }
 
-  changeField(data) {
+  changeField(data: any) {
     this.setAttributes()
   }
 
@@ -80,7 +80,7 @@ class CaptureModel extends HtmlNodeModel {
     this.text.editable = false
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {

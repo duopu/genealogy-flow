@@ -1,9 +1,9 @@
-import { type ConnectRule, HtmlNode, HtmlNodeModel, h } from '@logicflow/core'
+import { type ConnectRule, HtmlNode, HtmlNodeModel } from '@logicflow/core'
 import { edgesValidate, nodeValidate } from '@/views/pages/workFlow/data/flow-rules'
 import { NodeType } from '@/views/pages/workFlow/type/type'
 
 class ConditionNode extends HtmlNode {
-  setHtml(rootEl) {
+  setHtml(rootEl: any) {
     // console.log(rootEl, 'rootEl');
 
     rootEl.innerHTML = ''
@@ -15,19 +15,17 @@ class ConditionNode extends HtmlNode {
     rootEl.setAttribute('class', 'condition-container flow-node')
     const container = document.createElement('div')
 
-    const classNames = active
+    container.className = active
       ? `condition-node node-body active ${id}`
       : `condition-node node-body ${id}`
-    container.className = classNames
 
     const tableNameElement = document.createElement('div')
-    const html = `
+    tableNameElement.innerHTML = `
       <div class="">
-        <img src="${src}" class="node-child-pic" />
+        <img src="${src}" class="node-child-pic" alt=""/>
         <span>${name}</span>
       </div>
     `
-    tableNameElement.innerHTML = html
     tableNameElement.className = 'condition-name'
     container.appendChild(tableNameElement)
 
@@ -53,7 +51,7 @@ class ConditionModel extends HtmlNodeModel {
   /**
    * 给model自定义添加字段方法
    */
-  changeField(data) {
+  changeField(data: any) {
     const { type } = data?.data || data
 
     if (type !== 'add') {
@@ -76,13 +74,13 @@ class ConditionModel extends HtmlNodeModel {
   }
 
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {
@@ -126,12 +124,10 @@ class ConditionModel extends HtmlNodeModel {
       y,
       width,
       height,
-      isHovered,
-      isSelected,
       properties: { fields }
     } = this
-    const anchors = []
-    fields.forEach((item, index) => {
+    const anchors: any = []
+    fields.forEach((item: any, index: any) => {
       // if (isConnection || !(isHovered || isSelected)) {
       if (index === 0) {
         anchors.push({

@@ -212,7 +212,7 @@ const handleVariableInput = (str: string) => {
     }
   })
 
-  copyArr.forEach((item, i: number) => {
+  copyArr.forEach((item: any, i: number) => {
     if (item.type === 'text') {
       copyArr[i].value = handleInnerHTML(item.value)
     }

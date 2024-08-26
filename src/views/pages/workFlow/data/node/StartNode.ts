@@ -62,7 +62,7 @@ class CustomCircleNode extends RectNode {
 // 提供节点的样式
 class CustomCircleModel extends RectNodeModel {
   getOutlineStyle() {
-    const style = super.getOutlineStyle()
+    const style: any = super.getOutlineStyle()
     style.stroke = 'none'
     style.hover.stroke = 'none'
     return style
@@ -135,7 +135,7 @@ class CustomCircleModel extends RectNodeModel {
     ]
   }
 
-  getAnchorStyle(anchorInfo) {
+  getAnchorStyle(anchorInfo: any) {
     const { isHovered, isSelected } = this
     const style = super.getAnchorStyle(anchorInfo)
     if (isHovered) {
