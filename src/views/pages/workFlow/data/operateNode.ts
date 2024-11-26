@@ -11,7 +11,8 @@ import {
   PluginNode,
   SetNode,
   StartNode,
-  TextNode
+  TextNode,
+  UserNode
 } from '@/views/pages/workFlow/data/node'
 import DefaultLine from '@/views/pages/workFlow/data/edges/DefaultLine'
 import LogicFlow from '@logicflow/core'
@@ -33,7 +34,11 @@ export const initGraph = async (): Promise<LogicFlow> => {
 
     flow = new LogicFlow({
       container: document.getElementById('container') as HTMLElement,
-      grid: Grid_Options,
+      // grid: Grid_Options,
+      grid: true,
+      stopScrollGraph: true,
+      stopMoveGraph: true,
+      stopZoomGraph: true,
       background: { backgroundColor: '#F7F8FA' },
       snapline: false,
       // 注册组件
@@ -80,6 +85,9 @@ export const addNode = (node: NodeItemChildrenProps) => {
     case NodeType.CODE_NODE:
       addCodeNode(src)
       break
+    case NodeType.USER_NODE:
+      addUser(src)
+      break
     default:
       break
   }
@@ -98,6 +106,7 @@ const registerNode = () => {
     DefaultLine,
     CodeNode,
     IntentNode,
+    UserNode,
     PluginNode
   ]
   nodeList?.forEach((node) => {
@@ -116,6 +125,23 @@ const addAiSetNode = (src: string) => {
       name: 'LLM', // t('flow.llm'),
       src,
       place: '大模型交互', // t('flow.llm-interaction'),
+      body: '',
+      oldHeight: 0,
+      x: 0,
+      y: 0
+    }
+  })
+}
+
+const addUser = (src: string) => {
+  flow.dnd.startDrag({
+    type: NodeType.USER_NODE,
+    text: '',
+    properties: {
+      type: NodeType.USER_NODE,
+      name: 'USER',
+      src,
+      place: 'USER_NODE',
       body: '',
       oldHeight: 0,
       x: 0,

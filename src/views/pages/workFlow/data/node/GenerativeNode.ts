@@ -9,7 +9,7 @@ class GenerativeNode extends HtmlNode {
 
   setHtml(rootEl: HTMLElement): void {
     const { properties, id } = this.props.model
-    const { src, place, body, oldHeight, nodeParams } = properties
+    const { src, place, oldHeight, nodeParams } = properties
     const label = nodeParams?.label
 
     const el = document.createElement('div')

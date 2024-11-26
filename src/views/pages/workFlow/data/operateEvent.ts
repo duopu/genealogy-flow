@@ -35,6 +35,10 @@ export const bindEvent = (eventCenter: EventEmitter, callbacks: any) => {
     } else {
       // 调整判断节点样式
       if (ComplexNode.includes(data.data.type)) data.data.y = data.data.y - 18
+
+      if (data.data.type === NodeType.USER_NODE) {
+        return
+      }
       // 添加组
       addGroup(data.data)
     }
@@ -306,8 +310,12 @@ const setNodesIndex = (lf: LogicFlow, event: any) => {
 const changeDragPosition = async (event: any): Promise<void> => {
   // dragGroupId：原始组的id
   const { data, dragGroupId: oldGroupId } = event
+
   const lf = getLogicFlow()
   const { x, y, id } = data
+  if (data.type === NodeType.USER_NODE) {
+    return
+  }
   // isSelf：false表示拖拽到其他组内 newGroupId：则为新组id，否则为原来组id
   const { isSelf, resultGroupId: newGroupId } = isDragGroup(data, oldGroupId)
 
@@ -392,6 +400,9 @@ const getNodeHeight = (id: string): number => {
  * @param childNode 子节点
  */
 const isRemovedGroup = (groupId: string, childNode: BaseNodeModel): boolean => {
+  if (childNode.type === NodeType.USER_NODE) {
+    return false
+  }
   let isChange = true
   const childX = childNode.x
   const childY = childNode.y

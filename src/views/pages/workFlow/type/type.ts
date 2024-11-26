@@ -10,7 +10,8 @@ export enum NodeType {
   START_NODE = 'StartNode', // 开始节点
   INTENT_NODE = 'intention', // 意图识别节点
   PLUGIN_NODE = 'plugin', // 插件节点
-  CODE_NODE = 'code' // 代码节点
+  CODE_NODE = 'code', // 代码节点
+  USER_NODE = 'user'
 }
 
 export type NodeTypeText = (typeof NodeType)[keyof typeof NodeType] // keyof typeof InputItemType

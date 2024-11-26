@@ -43,6 +43,12 @@ export const Nodes_List: NodeItemProps[] = [
         src: '/genealogy-flow/src/assets/img/flow/intent.png'
       },
       {
+        id: '1-31',
+        name: 'flow.user',
+        type: NodeType.USER_NODE,
+        src: '/genealogy-flow/src/assets/img/flow/intent.png'
+      },
+      /*{
         id: '1-3',
         name: 'flow.plugins',
         type: NodeType.PLUGIN_NODE,
@@ -53,9 +59,10 @@ export const Nodes_List: NodeItemProps[] = [
         name: 'flow.codeEditor',
         type: NodeType.CODE_NODE,
         src: '/genealogy-flow/src/assets/img/flow/codeIcon.svg'
-      }
+      }*/
     ]
-  },
+  }
+  /*
   {
     id: '2',
     name: 'flow.branch-node',
@@ -104,6 +111,7 @@ export const Nodes_List: NodeItemProps[] = [
       }
     ]
   }
+  */
 ]
 
 // 开始节点的id
@@ -112,7 +120,7 @@ export const StartId = 'node_id_1'
 // 初始节点
 export const Graph_Data = {
   nodes: [
-    {
+    /*{
       id: StartId,
       type: 'StartNode',
       x: 280,
@@ -120,7 +128,7 @@ export const Graph_Data = {
       width: 84,
       height: 40,
       properties: {}
-    }
+    }*/
   ]
 }
 
